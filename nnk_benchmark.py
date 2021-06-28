@@ -20,11 +20,13 @@ parser = argparse.ArgumentParser(description='VISSL extract features')
 parser.add_argument('--model_url',
                     default='https://dl.fbaipublicfiles.com/vissl/model_zoo/deepclusterv2_800ep_pretrain.pth.tar',
                     help='Model to download - https://github.com/facebookresearch/vissl/blob/master/MODEL_ZOO.md')
-parser.add_argument('--logs_dir', default='/media/charlie/hd_1/VISSL')
+parser.add_argument('--logs_dir', default='/scratch/shekkizh/logs/VISSL')
 parser.add_argument("--config", default="imagenet1k_resnet50_trunk_features.yaml",
                     help="config file to extract features")
 parser.add_argument('--top_k', default=50, help="initial no. of neighbors")
-
+hrser.add_argument('--extract_features', dest='extract_features', action='store_true')
+parser.add_argument('--noextract_features', dest='extract_features', action='store_false')
+parser.set_defaults(extract_features=False)
 
 def to_categorical(y, num_classes=None, dtype='float32'):
     """
@@ -125,7 +127,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     print("Retrieving model weights from VISSL MODEL ZOO")
     basename = os.path.basename(args.model_url)
-    weights_file = os.path.join('/media/charlie/HD_2/PyTorch_hub', basename)
+    weights_file = os.path.join('/scratch/shekkizh/torch_hub/checkpoints/', basename)
     if not os.path.exists(weights_file):
         os.system(f"wget -O {weights_file}  -L {args.model_url}")
 
@@ -139,4 +141,4 @@ if __name__ == "__main__":
 
     assert is_hydra_available(), "Make sure to install hydra"
     overrides.append("hydra.verbose=true")
-    hydra_main(overrides=overrides)
+    hydra_main(overrides=overrides, extract_features=args.extract_features)

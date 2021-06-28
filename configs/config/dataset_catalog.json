@@ -4,8 +4,8 @@
         "val": ["airstore://flashblade_imagenet_val", "<unused>"]
     },
     "imagenet1k_folder": {
-        "train": ["/media/charlie/hd_1/Datasets/downloads/manual/imagenet/train", "/media/charlie/hd_1/Datasets/downloads/manual/imagenet/train"],
-        "val": ["/media/charlie/hd_1/Datasets/downloads/manual/imagenet/val", "/media/charlie/hd_1/Datasets/downloads/manual/imagenet/val"]
+        "train": ["/scratch/shekkizh/datasets/imagenet/train", "/scratch/shekkizh/datasets/imagenet/train"],
+        "val": ["/scratch/shekkizh/datasets/imagenet/val", "/scratch/shekkizh/datasets/imagenet/val"]
     },
     "imagenet_a_filelist": {
         "train": ["<not_used>", "<not_used>"],

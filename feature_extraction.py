@@ -14,7 +14,7 @@ parser = argparse.ArgumentParser(description='VISSL extract features')
 parser.add_argument('--model_url',
                     default='https://dl.fbaipublicfiles.com/vissl/model_zoo/deepclusterv2_800ep_pretrain.pth.tar',
                     help='Model to download - https://github.com/facebookresearch/vissl/blob/master/MODEL_ZOO.md')
-parser.add_argument('--logs_dir', default='/media/charlie/hd_1/VISSL')
+parser.add_argument('--logs_dir', default='/scratch/shekkizh/logs/VISSL')
 parser.add_argument("--config", default="imagenet1k_resnet50_trunk_features.yaml",
                     help="config file to extract features")
 
@@ -37,7 +37,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     print("Retrieving model weights from VISSL MODEL ZOO")
     basename = os.path.basename(args.model_url)
-    weights_file = os.path.join('/media/charlie/HD_2/PyTorch_hub', basename)
+    weights_file = os.path.join('/scratch/shekkizh/torch_hub/checkpoints/', basename)
     if not os.path.exists(weights_file):
         os.system(f"wget -O {weights_file}  -L {args.model_url}")
 
