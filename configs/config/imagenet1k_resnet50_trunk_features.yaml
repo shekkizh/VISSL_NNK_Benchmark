@@ -3,7 +3,7 @@ engine_name: extract_features
 config:
   SEED_VALUE: 4629
   DATA:
-    NUM_DATALOADER_WORKERS: 2
+    NUM_DATALOADER_WORKERS: 8
     TRAIN:
       DATA_SOURCES: [disk_folder]
       LABEL_SOURCES: [disk_folder]
@@ -65,6 +65,6 @@ config:
       STATE_DICT_KEY_NAME: ""
   DISTRIBUTED:
     NUM_NODES: 1
-    NUM_PROC_PER_NODE: 1
+    NUM_PROC_PER_NODE: 2
   MACHINE:
     DEVICE: gpu
