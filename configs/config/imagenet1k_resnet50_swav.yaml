@@ -53,9 +53,7 @@ config:
           DEPTH: 50
     WEIGHTS_INIT:
       PARAMS_FILE: "specify the model weights"
-      APPEND_PREFIX: "trunk._feature_blocks." # base_model.
-      REMOVE_PREFIX: "module."
-      STATE_DICT_KEY_NAME: ""
+      STATE_DICT_KEY_NAME: classy_state_dict
   DISTRIBUTED:
     NUM_NODES: 1
     NUM_PROC_PER_NODE: 2
