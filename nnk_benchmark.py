@@ -24,7 +24,7 @@ parser.add_argument('--logs_dir', default='/scratch/shekkizh/logs/VISSL')
 parser.add_argument("--config", default="imagenet1k_resnet50_trunk_features.yaml",
                     help="config file to extract features")
 parser.add_argument('--top_k', default=50, help="initial no. of neighbors")
-hrser.add_argument('--extract_features', dest='extract_features', action='store_true')
+parser.add_argument('--extract_features', dest='extract_features', action='store_true')
 parser.add_argument('--noextract_features', dest='extract_features', action='store_false')
 parser.set_defaults(extract_features=False)
 
@@ -49,7 +49,7 @@ def to_categorical(y, num_classes=None, dtype='float32'):
 
 @torch.no_grad()
 def nnk_classifier(features, labels, queries, targets, topk, num_classes=1000):
-    dim = features.size(1)
+    dim = features.shape[1]
     target_one_hot = to_categorical(labels, num_classes)
     normalized_features = features / np.linalg.norm(features, axis=1, keepdims=True)
     index = faiss.IndexFlatIP(dim)
@@ -76,7 +76,7 @@ def nnk_classifier(features, labels, queries, targets, topk, num_classes=1000):
             print(f"{ii}/{n_queries} processed...")
 
     probs = torch.from_numpy(soft_prediction).cuda()
-    targets = targets.cuda()
+    targets = torch.from_numpy(targets).cuda()
     _, predictions = probs.sort(1, True)
     correct = predictions.eq(targets.data.view(-1, 1))
     top1 = correct.narrow(1, 0, 1).sum().item() * 100.0 / n_queries
