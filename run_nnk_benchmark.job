@@ -14,6 +14,6 @@ module load cudnn/8.0.2-10.1
 
 source ~/vissl/bin/activate
 # python feature_extraction.py --model_url /scratch/shekkizh/torch_hub/checkpoints/resnet50-19c8e357.pth
-# python nnk_benchmark.py --model_url /scratch/shekkizh/torch_hub/checkpoints/deepclusterv2_800ep_pretrain.pth.tar --top_k 50 --extract_features
-python nnk_benchmark.py --model_url /scratch/shekkizh/torch_hub/checkpoints/model_final_checkpoint_phase399.torch --top_k 50 --extract_features
+# python nnk_benchmark.py --config imagenet1k_resnet50_deepclusterv2  --model_url /scratch/shekkizh/torch_hub/checkpoints/deepclusterv2_800ep_pretrain.pth.tar --top_k 50 --extract_features
+python nnk_benchmark.py --config imagenet1k_resnet50_swav  --model_url /scratch/shekkizh/torch_hub/checkpoints/model_final_checkpoint_phase399.torch --top_k 50 --extract_features
 # python nnk_benchmark.py --model_url /scratch/shekkizh/torch_hub/checkpoints/resnet50-19c8e357.pth --top_k 20 --noextract_features
