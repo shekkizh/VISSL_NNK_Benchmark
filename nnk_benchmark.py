@@ -69,6 +69,7 @@ def nnk_classifier(features, labels, queries, targets, topk, num_classes=1000):
         g_i = 0.5 + np.dot(x_support, x_test) / 2
         G_i = 0.5 + np.dot(x_support, x_support.T) / 2
         x_opt = non_negative_qpsolver(G_i, g_i, g_i, x_tol=1e-10)
+        # x_opt = g_i
         non_zero_indices = np.nonzero(x_opt)
         x_opt = x_opt[non_zero_indices] / np.sum(x_opt[non_zero_indices])
         soft_prediction[ii, :] = np.dot(x_opt, neighbor_labels[non_zero_indices])
