@@ -5,8 +5,8 @@ One can also, perform evaluation on pre
 # Requirements
 The source code assumes the following packages are installed: 
 - VISSL: This forms the bacbone for retrieving features of various self supervised models. The code was tested with installation from VISSL source.
-- FAISS: Used to query for nearest neighbors. Code was tested with pip installed gpu version.
-Installation instructions for both packages can be found [here](https://github.com/facebookresearch/vissl/blob/master/INSTALL.md) and [here](Installation instructions can be found [here](https://github.com/facebookresearch/vissl/blob/master/INSTALL.md))
+- FAISS: Used to query for nearest neighbors. Code was tested with pip installed gpu version of package.
+Installation instructions for both packages can be found [here](https://github.com/facebookresearch/vissl/blob/master/INSTALL.md) and [here](https://github.com/facebookresearch/faiss/blob/master/INSTALL.md)
 
 # Data and Pretrained models
 The config files provided assume evaluation on ImageNet data which need to be downloaded and saved to a local directory. Further instructions on how to setup the dataset
