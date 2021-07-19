@@ -12,5 +12,7 @@ Installation instructions for both packages can be found [here](https://github.c
 The config files provided assume evaluation on ImageNet data which need to be downloaded and saved to a local directory. Further instructions on how to setup the dataset
 can be found in VISSL [documentation](https://vissl.readthedocs.io/en/v0.1.5/getting_started.html#setup-dataset).
 
-VISSL documentation also provides [instruction](https://vissl.readthedocs.io/en/v0.1.5/evaluations/feature_extraction.html) and tutorials(https://github.com/facebookresearch/vissl#tutorials) on loading pretrained self supervised models for feature extraction.
+VISSL documentation also provides [instruction](https://vissl.readthedocs.io/en/v0.1.5/evaluations/feature_extraction.html) and [tutorials](https://github.com/facebookresearch/vissl#tutorials) on loading pretrained self supervised models for feature extraction. The config files in this repository provide examples for some of the recently popular self supervised models.
+
+
 
