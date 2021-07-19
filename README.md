@@ -1,4 +1,4 @@
-# VISSL_NNK_Benchmark
+# VISSL-NNK: Self Supervised Model Evaluation Framework
 NNK evaluation of Self supervised models. The source code is integrated with VISSL for feature extraction and can be applied to any dataset and model that can be loaded by VISSL. 
 One can also, perform evaluation on pre
 
