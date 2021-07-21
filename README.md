@@ -1,6 +1,9 @@
 # VISSL-NNK: Self Supervised Model Evaluation 
+[Blog Post](https://shekkizh.github.io/posts/2021/06/revisiting-knn-with-nnk/)
+
 NNK evaluation of Self supervised models. The source code is integrated with VISSL for feature extraction and can be applied to any dataset and model that can be loaded by VISSL. 
-One can also, perform evaluation on pre
+One can also, perform evaluation by directly using the relevant code corresponding to NNK classifier on pre-extracted features without VISSL.
+
 
 # Requirements
 The source code assumes the following packages are installed: 
